@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>authors</h1>
+    <ul>
+        {% for author in authors %}
+        <li>{{author.name}}</li>
+        {% empty %}
+
+        <li>no authors found</li>
+
+        {% endfor %}
+
+
+    </ul>
+
+
+    <h2>the posts are</h2>
+<ul>
+{% for post in posts %}
+<li>
+    <h3>{{ post.title }}</h3>
+    <p>publishd by {{post.author.name}} on {{post.published_date }}</p>
+    <p>{{post.content}}</p>
+</li>
+    {% empty %}
+<li>no posts found</li>
+
+{% endfor %}
+</ul>
+    
+</body>
+</html>
